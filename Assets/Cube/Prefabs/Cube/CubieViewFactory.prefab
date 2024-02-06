@@ -1,0 +1,56 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1481915916059140557
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3318228959445799189}
+  - component: {fileID: 8735271811912617997}
+  m_Layer: 0
+  m_Name: CubieViewFactory
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3318228959445799189
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1481915916059140557}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8735271811912617997
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1481915916059140557}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d24e0b900a3db249bc0b5af45f1da98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cubiePrefab: {fileID: 8217891540640073649, guid: c1986bcb5536c034d83217dc85b88522,
+    type: 3}
+  cubiePanelPrefab: {fileID: 169275703041786231, guid: c5b6b99d19a7bb147aadc5c812df0ec7,
+    type: 3}
+  cornerPanelPrefab: {fileID: 169275703041786231, guid: 8c08f58e925e3814ca9d42c02020ffdd,
+    type: 3}
+  edgePanelPrefab: {fileID: 169275703041786231, guid: b7d3ed7cba7a934499788c91b1f23096,
+    type: 3}
+  centerPanelPrefab: {fileID: 169275703041786231, guid: a8f20b316592afd48ac7fa557b6fadf1,
+    type: 3}
