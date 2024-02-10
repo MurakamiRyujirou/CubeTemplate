@@ -85,6 +85,8 @@ namespace MurakamiRyujirou.Cube
         {
             if (x < 0 || x > Size || y < 0 || y > Size || z < 0 || z > Size)
                 throw new ArgumentException("Illegal argument exception. x =" + x + ",y =" + y + ",z =" + z);
+            if (cubies[x, y, z] == null)
+                throw new Exception("Wrong parameter (" + x + "," + y + "," + z + ")");
             return cubies[x, y, z];
         }
 

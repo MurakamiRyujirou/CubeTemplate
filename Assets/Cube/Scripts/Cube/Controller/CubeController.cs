@@ -95,6 +95,9 @@ namespace MurakamiRyujirou.Cube
 
             // キューブビューは回転停止を指示する.
             CubeView.Stop();
+
+            // キューブビューの位置と向きをリセットしモデルの配色に更新する.
+            CubeView.Reset(Cube);
         }
 
         /// ビューのキューブ回転クラスから回転操作の完了通知がくるとコールされるメソッド.

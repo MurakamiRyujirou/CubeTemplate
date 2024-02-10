@@ -30,7 +30,7 @@ namespace MurakamiRyujirou.Cube
         private Dictionary<Faces, GameObject> panels;
 
         /// キュービーのパネルをセットする.
-        public void SetPanel(Faces face, GameObject panel)
+        public void AddPanel(Faces face, GameObject panel)
         {
             if (panels == null)
                 panels = new();

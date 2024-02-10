@@ -1,6 +1,7 @@
 namespace MurakamiRyujirou.Cube
 {
     /// ‰ñ“]‘€ì.
+    /// 18+9+9+18=54
     public enum Operations
     {
         // ’P‘w‰ñ‚µ(ŠO‘¤).

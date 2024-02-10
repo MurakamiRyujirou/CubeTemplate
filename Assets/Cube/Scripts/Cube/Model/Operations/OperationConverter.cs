@@ -76,5 +76,79 @@ namespace MurakamiRyujirou.Cube
                 _ => Operations.NONE
             };
         }
+
+        public static string Convert(Operations solution)
+        {
+            return solution switch
+            {
+                Operations.R => "R",
+                Operations.L => "L",
+                Operations.U => "U",
+                Operations.D => "D",
+                Operations.B => "B",
+                Operations.F => "F",
+                Operations.R_ => "R'",
+                Operations.L_ => "L'",
+                Operations.U_ => "U'",
+                Operations.D_ => "D'",
+                Operations.B_ => "B'",
+                Operations.F_ => "F'",
+                Operations.R2 => "R2",
+                Operations.L2 => "L2",
+                Operations.U2 => "U2",
+                Operations.D2 => "D2",
+                Operations.B2 => "B2",
+                Operations.F2 => "F2",
+                Operations.M => "M",
+                Operations.E => "E",
+                Operations.S => "S",
+                Operations.M_ => "M'",
+                Operations.E_ => "E'",
+                Operations.S_ => "S'",
+                Operations.M2 => "M2",
+                Operations.E2 => "E2",
+                Operations.S2 => "S2",
+                Operations.x => "x",
+                Operations.y => "y",
+                Operations.z => "z",
+                Operations.x_ => "x'",
+                Operations.y_ => "y'",
+                Operations.z_ => "z'",
+                Operations.x2 => "x2",
+                Operations.y2 => "y2",
+                Operations.z2 => "z2",
+                Operations.Rw => "Rw",
+                Operations.Lw => "Lw",
+                Operations.Uw => "Uw",
+                Operations.Dw => "Dw",
+                Operations.Bw => "Bw",
+                Operations.Fw => "Fw",
+                Operations.Rw_ => "Rw'",
+                Operations.Lw_ => "Lw'",
+                Operations.Uw_ => "Uw'",
+                Operations.Dw_ => "Dw'",
+                Operations.Bw_ => "Bw'",
+                Operations.Fw_ => "Fw'",
+                Operations.Rw2 => "Rw2",
+                Operations.Lw2 => "Lw2",
+                Operations.Uw2 => "Uw2",
+                Operations.Dw2 => "Dw2",
+                Operations.Bw2 => "Bw2",
+                Operations.Fw2 => "Fw2",
+            };
+        }
+
+        public static Operations Convert(PureOperations o)
+        {
+            return o switch
+            {
+                PureOperations.R => Operations.R,
+                PureOperations.L => Operations.L,
+                PureOperations.U => Operations.U,
+                PureOperations.D => Operations.D,
+                PureOperations.B => Operations.B,
+                PureOperations.F => Operations.F,
+            };
+        }
     }
 }

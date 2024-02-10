@@ -115,67 +115,79 @@ namespace MurakamiRyujirou.Cube
         /// ‰ñ“]²‚Æ‚È‚éVector3‚Ì’l‚ğæ“¾‚·‚é.Cube‚²‚Æ‰ñ“]‚³‚¹‚Ä‚à³‚µ‚­æ“¾‚Å‚«‚é‚æ‚¤‚Étransform‚©‚çæ“¾‚µ‚Ä‚¢‚é.
         private Vector3 GetAxis(Operations currentOperation)
         {
-            if (currentOperation == Operations.R  || currentOperation == Operations.R_  || currentOperation == Operations.R2)  return transform.right;
-            if (currentOperation == Operations.L  || currentOperation == Operations.L_  || currentOperation == Operations.L2)  return transform.right;
-            if (currentOperation == Operations.M  || currentOperation == Operations.M_  || currentOperation == Operations.M2)  return transform.right;
-            if (currentOperation == Operations.x  || currentOperation == Operations.x_  || currentOperation == Operations.x2)  return transform.right;
-            if (currentOperation == Operations.Rw || currentOperation == Operations.Rw_ || currentOperation == Operations.Rw2) return transform.right;
-            if (currentOperation == Operations.Lw || currentOperation == Operations.Lw_ || currentOperation == Operations.Lw2) return transform.right;
-            if (currentOperation == Operations.U  || currentOperation == Operations.U_  || currentOperation == Operations.U2)  return transform.up;
-            if (currentOperation == Operations.D  || currentOperation == Operations.D_  || currentOperation == Operations.D2)  return transform.up;
-            if (currentOperation == Operations.E  || currentOperation == Operations.E_  || currentOperation == Operations.E2)  return transform.up;
-            if (currentOperation == Operations.y  || currentOperation == Operations.y_  || currentOperation == Operations.y2)  return transform.up;
-            if (currentOperation == Operations.Uw || currentOperation == Operations.Uw_ || currentOperation == Operations.Uw2) return transform.up;
-            if (currentOperation == Operations.Dw || currentOperation == Operations.Dw_ || currentOperation == Operations.Dw2) return transform.up;
-            if (currentOperation == Operations.B  || currentOperation == Operations.B_  || currentOperation == Operations.B2)  return transform.forward;
-            if (currentOperation == Operations.F  || currentOperation == Operations.F_  || currentOperation == Operations.F2)  return transform.forward;
-            if (currentOperation == Operations.S  || currentOperation == Operations.S_  || currentOperation == Operations.S2)  return transform.forward;
-            if (currentOperation == Operations.z  || currentOperation == Operations.z_  || currentOperation == Operations.z2)  return transform.forward;
-            if (currentOperation == Operations.Bw || currentOperation == Operations.Bw_ || currentOperation == Operations.Bw2) return transform.forward;
-            if (currentOperation == Operations.Fw || currentOperation == Operations.Fw_ || currentOperation == Operations.Fw2) return transform.forward;
+            // x²Œn:18í.
+            if (currentOperation == Operations.R   || currentOperation == Operations.L   ||
+                currentOperation == Operations.R_  || currentOperation == Operations.L_  ||
+                currentOperation == Operations.R2  || currentOperation == Operations.L2  ||
+                currentOperation == Operations.M   || currentOperation == Operations.M_  || currentOperation == Operations.M2 ||
+                currentOperation == Operations.x   || currentOperation == Operations.x_  || currentOperation == Operations.x2 ||
+                currentOperation == Operations.Rw  || currentOperation == Operations.Lw  ||
+                currentOperation == Operations.Rw_ || currentOperation == Operations.Lw_ ||
+                currentOperation == Operations.Rw2 || currentOperation == Operations.Lw2) return transform.right;
+            // y²Œn:18í.
+            if (currentOperation == Operations.U   || currentOperation == Operations.D   ||
+                currentOperation == Operations.U_  || currentOperation == Operations.D_  ||
+                currentOperation == Operations.U2  || currentOperation == Operations.D2  ||
+                currentOperation == Operations.E   || currentOperation == Operations.E_  || currentOperation == Operations.E2 ||
+                currentOperation == Operations.y   || currentOperation == Operations.y_  || currentOperation == Operations.y2 ||
+                currentOperation == Operations.Uw  || currentOperation == Operations.Dw  ||
+                currentOperation == Operations.Uw_ || currentOperation == Operations.Dw_ ||
+                currentOperation == Operations.Uw2 || currentOperation == Operations.Dw2) return transform.up;
+            // z²Œn:18í.
+            if (currentOperation == Operations.F   || currentOperation == Operations.B   ||
+                currentOperation == Operations.F_  || currentOperation == Operations.B_  ||
+                currentOperation == Operations.F2  || currentOperation == Operations.B2  ||
+                currentOperation == Operations.S   || currentOperation == Operations.S_  || currentOperation == Operations.S2 ||
+                currentOperation == Operations.z   || currentOperation == Operations.z_  || currentOperation == Operations.z2 ||
+                currentOperation == Operations.Fw  || currentOperation == Operations.Bw  ||
+                currentOperation == Operations.Fw_ || currentOperation == Operations.Bw_ ||
+                currentOperation == Operations.Fw2 || currentOperation == Operations.Bw2) return -transform.forward;
             return Vector3.zero;
         }
 
         /// ‰ñ“]²‚É‘Î‚µ‚Ä³•‰‚Ç‚¿‚ç‚Ì•ûŒü‚É‰ñ“]‚³‚¹‚é‚©‚ğæ“¾‚·‚é.
         private float Direction(Operations currentOperation)
         {
-            if (currentOperation == Operations.R  || currentOperation == Operations.L_)  return 1f;
-            if (currentOperation == Operations.U  || currentOperation == Operations.D_)  return 1f;
-            if (currentOperation == Operations.B  || currentOperation == Operations.F_)  return 1f;
-            if (currentOperation == Operations.R2 || currentOperation == Operations.x2)  return 1f;
-            if (currentOperation == Operations.U2 || currentOperation == Operations.y2)  return 1f;
-            if (currentOperation == Operations.B2 || currentOperation == Operations.z2)  return 1f;
-            if (currentOperation == Operations.Rw || currentOperation == Operations.Lw_) return 1f;
-            if (currentOperation == Operations.Uw || currentOperation == Operations.Dw_) return 1f;
-            if (currentOperation == Operations.Bw || currentOperation == Operations.Fw_) return 1f;
-            if (currentOperation == Operations.Rw2) return 1f;
-            if (currentOperation == Operations.Uw2) return 1f;
-            if (currentOperation == Operations.Bw2) return 1f;
-            if (currentOperation == Operations.M)   return 1f;
-            if (currentOperation == Operations.E)   return 1f;
-            if (currentOperation == Operations.S)   return 1f;
-            if (currentOperation == Operations.x)   return 1f;
-            if (currentOperation == Operations.y)   return 1f;
-            if (currentOperation == Operations.z)   return -1f;
-            if (currentOperation == Operations.L  || currentOperation == Operations.R_)  return -1f;
-            if (currentOperation == Operations.D  || currentOperation == Operations.U_)  return -1f;
-            if (currentOperation == Operations.F  || currentOperation == Operations.B_)  return -1f;
-            if (currentOperation == Operations.L2 || currentOperation == Operations.M2)  return -1f;
-            if (currentOperation == Operations.D2 || currentOperation == Operations.E2)  return -1f;
-            if (currentOperation == Operations.F2 || currentOperation == Operations.S2)  return -1f;
-            if (currentOperation == Operations.Lw || currentOperation == Operations.Rw_) return -1f;
-            if (currentOperation == Operations.Dw || currentOperation == Operations.Uw_) return -1f;
-            if (currentOperation == Operations.Fw || currentOperation == Operations.Bw_) return -1f;
-            if (currentOperation == Operations.Lw2) return -1f;
-            if (currentOperation == Operations.Dw2) return -1f;
-            if (currentOperation == Operations.Fw2) return -1f;
-            if (currentOperation == Operations.M_)  return -1f;
-            if (currentOperation == Operations.E_)  return -1f;
-            if (currentOperation == Operations.S_)  return -1f;
-            if (currentOperation == Operations.x_)  return -1f;
-            if (currentOperation == Operations.y_)  return -1f;
-            if (currentOperation == Operations.z_)  return 1f;
-            return 1f;
+            // x²Œn:9+9=18í.
+            if (currentOperation == Operations.R   || currentOperation == Operations.R2  ||
+                currentOperation == Operations.L_  ||
+                currentOperation == Operations.M_  ||
+                currentOperation == Operations.x   || currentOperation == Operations.x2  ||
+                currentOperation == Operations.Rw  || currentOperation == Operations.Rw2 ||
+                currentOperation == Operations.Lw_) return 1f;
+            if (currentOperation == Operations.L   || currentOperation == Operations.L2  ||
+                currentOperation == Operations.R_  ||
+                currentOperation == Operations.M   || currentOperation == Operations.M2  ||
+                currentOperation == Operations.x_  ||
+                currentOperation == Operations.Rw_ ||
+                currentOperation == Operations.Lw  || currentOperation == Operations.Lw2) return -1f;
+            // y²Œn
+            if (currentOperation == Operations.U   || currentOperation == Operations.U2  ||
+                currentOperation == Operations.D_  ||
+                currentOperation == Operations.E_  ||
+                currentOperation == Operations.y   || currentOperation == Operations.y2  ||
+                currentOperation == Operations.Uw  || currentOperation == Operations.Uw2 ||
+                currentOperation == Operations.Dw_) return 1f;
+            if (currentOperation == Operations.D   || currentOperation == Operations.D2  ||
+                currentOperation == Operations.U_  ||
+                currentOperation == Operations.E   || currentOperation == Operations.E2  ||
+                currentOperation == Operations.y_  ||
+                currentOperation == Operations.Uw_ ||
+                currentOperation == Operations.Dw  || currentOperation == Operations.Dw2) return -1f;
+            // z²Œn
+            if (currentOperation == Operations.F   || currentOperation == Operations.F2  ||
+                currentOperation == Operations.B_  ||
+                currentOperation == Operations.S   || currentOperation == Operations.S2  || // S‚ÍF‚Æ“¯‚¶‰ñ“]•ûŒü‚È‚Ì‚Å’ˆÓ.
+                currentOperation == Operations.z   || currentOperation == Operations.z2  ||
+                currentOperation == Operations.Fw  || currentOperation == Operations.Fw2 ||
+                currentOperation == Operations.Bw_) return 1f;
+            if (currentOperation == Operations.B   || currentOperation == Operations.B2  ||
+                currentOperation == Operations.F_  ||
+                currentOperation == Operations.S_  ||
+                currentOperation == Operations.z_  ||
+                currentOperation == Operations.Fw_ ||
+                currentOperation == Operations.Bw  || currentOperation == Operations.Bw2) return -1f;
+            return 0f;
         }
 
         /// ‰ñ“]‘€ì‚Ì‰ñ“]“x”‚ğæ“¾‚·‚é.

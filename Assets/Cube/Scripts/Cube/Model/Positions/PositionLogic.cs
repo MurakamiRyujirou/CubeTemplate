@@ -52,7 +52,7 @@ namespace MurakamiRyujirou.Cube
                 Operations.E or Operations.E_ or Operations.E2 => GetPositionsFromAxis(Axes.Y),
                 Operations.S or Operations.S_ or Operations.S2 => GetPositionsFromAxis(Axes.Z),
                 Operations.x or Operations.x_ or Operations.x2 or
-                Operations.y or Operations.y_ or Operations.z2 or
+                Operations.y or Operations.y_ or Operations.y2 or
                 Operations.z or Operations.z_ or Operations.z2 => all,
                 Operations.Rw or Operations.Rw_ or Operations.Rw2 => GetPositionsFromFace(Faces.RIGHT).Concat(GetPositionsFromAxis(Axes.X)).ToArray(),
                 Operations.Lw or Operations.Lw_ or Operations.Lw2 => GetPositionsFromFace(Faces.LEFT).Concat(GetPositionsFromAxis(Axes.X)).ToArray(),
@@ -95,7 +95,7 @@ namespace MurakamiRyujirou.Cube
             {
                 Axes.X => new Vector3Int[] { uf, df, db, ub },
                 Axes.Y => new Vector3Int[] { bl, fl, fr, br },
-                Axes.Z => new Vector3Int[] { ul, dl, dr, ur },
+                Axes.Z => new Vector3Int[] { ul, ur, dr, dl },
                 _ => new Vector3Int[] { },
             };
         }
@@ -110,7 +110,7 @@ namespace MurakamiRyujirou.Cube
             {
                 Axes.X => new Vector3Int[] { u, f, d, b },
                 Axes.Y => new Vector3Int[] { b, l, f, r },
-                Axes.Z => new Vector3Int[] { u, l, d, r },
+                Axes.Z => new Vector3Int[] { u, r, d, l },
                 _ => new Vector3Int[] { },
             };
         }

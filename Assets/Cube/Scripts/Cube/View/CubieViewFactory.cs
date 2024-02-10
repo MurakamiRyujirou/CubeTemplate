@@ -44,7 +44,7 @@ namespace MurakamiRyujirou.Cube
                 GameObject panel = Instantiate(panelPrefab, pos, rot, cubieViewObject.transform);
 
                 // キュービーからパネルを指定する必要があり、パネル情報を渡すこととした.
-                cubieView.SetPanel(face, panel);
+                cubieView.AddPanel(face, panel);
 
                 // パネルに色をセットする.
                 cubieView.SetColor(face, c);

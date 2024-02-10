@@ -97,6 +97,28 @@ namespace MurakamiRyujirou.Cube
             rotator.Stop();
         }
 
+        public void Reset(Cube cube)
+        {
+            for (int z = 0; z < SIZE; z++)
+            {
+                for (int y = 0; y < SIZE; y++)
+                {
+                    for (int x = 0; x < SIZE; x++)
+                    {
+                        Cubie c = cube.GetCubie(x, y, z);
+                        CubieView cv = CubieViews[c.X, c.Y, c.Z];
+
+                        float d = (SIZE == 1) ? 0f : (SIZE == 2) ? -0.5f : -1.0f;
+                        Vector3 position = new(x + d, y + d, z + d);
+                        cv.gameObject.transform.localPosition = position;
+
+                        cv.gameObject.transform.localEulerAngles = Vector3.zero;
+                        cv.SetColors(c.Colors);
+                    }
+                }
+            }
+        }
+
         public void Adjust(Cube cube)
         {
             for (int z = 0; z < SIZE; z++)
@@ -106,10 +128,6 @@ namespace MurakamiRyujirou.Cube
                     for (int x = 0; x < SIZE; x++)
                     {
                         Cubie c = cube.GetCubie(x, y, z);
-                        if (c == null)
-                        {
-                            throw new Exception("Wrong parameter (" + x + "," + y + "," + z + ")");
-                        }
                         CubieView cv = CubieViews[c.X, c.Y, c.Z];
                         Vector3 pos = cv.gameObject.transform.localPosition;
                         Vector3 rot = cv.gameObject.transform.localEulerAngles;

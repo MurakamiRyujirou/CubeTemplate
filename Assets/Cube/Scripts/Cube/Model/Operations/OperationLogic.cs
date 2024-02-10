@@ -51,9 +51,9 @@ namespace MurakamiRyujirou.Cube
                 Operations.y_ => new SingleOperations[] { SingleOperations.U_, SingleOperations.E, SingleOperations.D },
                 Operations.z_ => new SingleOperations[] { SingleOperations.F_, SingleOperations.S_, SingleOperations.B },
 
-                Operations.x2 => new SingleOperations[] { SingleOperations.R, SingleOperations.R, SingleOperations.M, SingleOperations.R, SingleOperations.R, SingleOperations.M },
-                Operations.y2 => new SingleOperations[] { SingleOperations.U, SingleOperations.E, SingleOperations.D, SingleOperations.U, SingleOperations.E, SingleOperations.D },
-                Operations.z2 => new SingleOperations[] { SingleOperations.F, SingleOperations.S, SingleOperations.B, SingleOperations.F, SingleOperations.S, SingleOperations.B },
+                Operations.x2 => new SingleOperations[] { SingleOperations.R, SingleOperations.R, SingleOperations.M_, SingleOperations.M_, SingleOperations.L_, SingleOperations.L_ },
+                Operations.y2 => new SingleOperations[] { SingleOperations.U, SingleOperations.U, SingleOperations.E_, SingleOperations.E_, SingleOperations.D_, SingleOperations.D_ },
+                Operations.z2 => new SingleOperations[] { SingleOperations.F, SingleOperations.F, SingleOperations.S, SingleOperations.S, SingleOperations.B_, SingleOperations.B_ },
 
                 Operations.Rw => new SingleOperations[] { SingleOperations.R, SingleOperations.M_ },
                 Operations.Lw => new SingleOperations[] { SingleOperations.L, SingleOperations.M },
@@ -69,12 +69,12 @@ namespace MurakamiRyujirou.Cube
                 Operations.Bw_ => new SingleOperations[] { SingleOperations.B_, SingleOperations.S },
                 Operations.Fw_ => new SingleOperations[] { SingleOperations.F_, SingleOperations.S_ },
 
-                Operations.Rw2 => new SingleOperations[] { SingleOperations.R, SingleOperations.M, SingleOperations.R, SingleOperations.M },
-                Operations.Lw2 => new SingleOperations[] { SingleOperations.L, SingleOperations.M, SingleOperations.L, SingleOperations.M },
-                Operations.Uw2 => new SingleOperations[] { SingleOperations.U, SingleOperations.E, SingleOperations.U, SingleOperations.E },
-                Operations.Dw2 => new SingleOperations[] { SingleOperations.D, SingleOperations.E, SingleOperations.D, SingleOperations.E },
-                Operations.Bw2 => new SingleOperations[] { SingleOperations.B, SingleOperations.S, SingleOperations.B, SingleOperations.S },
-                Operations.Fw2 => new SingleOperations[] { SingleOperations.F, SingleOperations.S, SingleOperations.F, SingleOperations.S },
+                Operations.Rw2 => new SingleOperations[] { SingleOperations.R, SingleOperations.R, SingleOperations.M_, SingleOperations.M_ },
+                Operations.Lw2 => new SingleOperations[] { SingleOperations.L, SingleOperations.L, SingleOperations.M, SingleOperations.M },
+                Operations.Uw2 => new SingleOperations[] { SingleOperations.U, SingleOperations.U, SingleOperations.E_, SingleOperations.E_ },
+                Operations.Dw2 => new SingleOperations[] { SingleOperations.D, SingleOperations.D, SingleOperations.E, SingleOperations.E },
+                Operations.Bw2 => new SingleOperations[] { SingleOperations.B, SingleOperations.B, SingleOperations.S_, SingleOperations.S_ },
+                Operations.Fw2 => new SingleOperations[] { SingleOperations.F, SingleOperations.F, SingleOperations.S, SingleOperations.S },
 
                 Operations.NONE => new SingleOperations[] { },
                 _ => throw new NotImplementedException()
