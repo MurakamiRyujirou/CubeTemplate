@@ -4,21 +4,14 @@ namespace MurakamiRyujirou.Cube
 {
     /// キュービーの座標.
     [Serializable]
-    public class CubiePosition
+    public class CubiePosition : Position
     {
-        public int X { get; set; }
-        public int Y { get; set; }
-        public int Z { get; set; }
-
         /// Constructor.
         /// <param name="x">X座標.</param>
         /// <param name="y">Y座標.</param>
         /// <param name="z">Z座標.</param>
-        public CubiePosition(int x, int y, int z)
+        public CubiePosition(int x, int y, int z) : base(x, y, z)
         {
-            X = x;
-            Y = y;
-            Z = z;
         }
 
         /// ポジション名に対応した座標を返す.
@@ -130,6 +123,31 @@ namespace MurakamiRyujirou.Cube
 
                 _ => throw new NotImplementedException(),
             };
+        }
+
+        // -------- OVERRIDE --------
+
+        public override bool Equals(object obj)
+        {
+            if (obj == null) return false;
+            if (obj == this) return true;
+            if (obj.GetType() != this.GetType()) return false;
+            CubiePosition target = (CubiePosition)obj;
+            return X == target.X && Y == target.Y && Z == target.Z;
+        }
+
+        public override int GetHashCode()
+        {
+            int hash = 0;
+            hash += hash * 31 + X;
+            hash += hash * 31 + Y;
+            hash += hash * 31 + Z;
+            return hash;
+        }
+
+        public override string ToString()
+        {
+            return X.ToString() + "," + Y.ToString() + "," + Z.ToString();
         }
     }
 }

@@ -63,12 +63,12 @@ namespace MurakamiRyujirou.Cube
 
         /// キュービービューを取得する.
         /// 回転操作するときの対象キュービーを取得する際に利用.
-        public CubieView[] GetCubieViews(Vector3Int[] pos)
+        public CubieView[] GetCubieViews(Position[] pos)
         {
             List<CubieView> ret = new();
-            foreach (Vector3Int p in pos)
+            foreach (Position p in pos)
             {
-                ret.Add(CubieViews[p.x, p.y, p.z]);
+                ret.Add(CubieViews[p.X, p.Y, p.Z]);
             }
             return ret.ToArray();
         }
@@ -78,7 +78,12 @@ namespace MurakamiRyujirou.Cube
         /// 以降OnUpdateを通じて徐々に回転させることとなる.
         public bool Rotate(CubieView[] cubies, Operations oper)
         {
-            bool ret = rotator.Rotate(cubies, oper);
+            List<Transform> transformList = new();
+            foreach (CubieView cubie in cubies)
+            {
+                transformList.Add(cubie.gameObject.transform);
+            }
+            bool ret = rotator.Rotate(transformList.ToArray(), oper);
             if (ret)
             {
                 // 効果音が設定されていれば音を出す.
@@ -105,15 +110,16 @@ namespace MurakamiRyujirou.Cube
                 {
                     for (int x = 0; x < SIZE; x++)
                     {
-                        Cubie c = cube.GetCubie(x, y, z);
-                        CubieView cv = CubieViews[c.X, c.Y, c.Z];
+                        Cubie c = cube.GetCubie(new Position(x, y, z));
+                        Position p = c.InitialPosition;
+                        CubieView cv = CubieViews[p.X, p.Y, p.Z];
 
                         float d = (SIZE == 1) ? 0f : (SIZE == 2) ? -0.5f : -1.0f;
                         Vector3 position = new(x + d, y + d, z + d);
                         cv.gameObject.transform.localPosition = position;
 
                         cv.gameObject.transform.localEulerAngles = Vector3.zero;
-                        cv.SetColors(c.Colors);
+                        cv.SetPanels(c.CurrentPanels);
                     }
                 }
             }
@@ -127,11 +133,12 @@ namespace MurakamiRyujirou.Cube
                 {
                     for (int x = 0; x < SIZE; x++)
                     {
-                        Cubie c = cube.GetCubie(x, y, z);
-                        CubieView cv = CubieViews[c.X, c.Y, c.Z];
+                        Cubie c = cube.GetCubie(new Position(x, y, z));
+                        Position p = c.InitialPosition;
+                        CubieView cv = CubieViews[p.X, p.Y, p.Z];
                         Vector3 pos = cv.gameObject.transform.localPosition;
                         Vector3 rot = cv.gameObject.transform.localEulerAngles;
-                        Debug.Log("Model(" + c.X + "," + c.Y + "," + c.Z + ")" +
+                        Debug.Log("Model(" + p.X + "," + p.Y + "," + p.Z + ")" +
                                   ",View(" + pos.x + "," + pos.y + "," + pos.z + ")" +
                                        "(" + rot.x + "," + rot.y + "," + rot.z + ")");
                     }

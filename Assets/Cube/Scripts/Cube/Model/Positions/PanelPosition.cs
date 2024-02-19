@@ -9,10 +9,11 @@ namespace MurakamiRyujirou.Cube
     [Serializable]
     public class PanelPosition
     {
-        public int X { get; set; }
-        public int Y { get; set; }
-        public int Z { get; set; }
+        public CubiePosition Position { get; set; }
         public Faces Face { get; set; }
+        public int X { get; }
+        public int Y { get; }
+        public int Z { get; }
 
         /// Constructor.
         /// <param name="x">X座標.</param>
@@ -21,10 +22,11 @@ namespace MurakamiRyujirou.Cube
         /// <param name="face">面.</param>
         public PanelPosition(int x, int y, int z, Faces face)
         {
+            Position = new(x, y, z);
+            Face = face;
             X = x;
             Y = y;
             Z = z;
-            Face = face;
         }
 
         /// パネル名に対応したパネル座標を返す.
@@ -133,6 +135,30 @@ namespace MurakamiRyujirou.Cube
 
                 _ => throw new NotImplementedException(),
             };
+        }
+
+        // -------- OVERRIDE --------
+
+        public override bool Equals(object obj)
+        {
+            if (obj == null) return false;
+            if (obj == this) return true;
+            if (obj.GetType() != this.GetType()) return false;
+            PanelPosition target = (PanelPosition)obj;
+            return Position.Equals(target.Position) && Face.Equals(target.Face);
+        }
+
+        public override int GetHashCode()
+        {
+            int hash = 0;
+            hash += hash * 31 + Position.GetHashCode();
+            hash += hash * 31 + Face.GetHashCode();
+            return hash;
+        }
+
+        public override string ToString()
+        {
+            return Position.ToString() + "," + Face.ToString();
         }
     }
 }

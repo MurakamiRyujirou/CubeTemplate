@@ -38,16 +38,16 @@ namespace MurakamiRyujirou.Cube
         /// 回転操作を行うための設定をする.
         /// <param name="cubies">回転するキュービーのリスト.</param>
         /// <param name="oper">回転操作.</param>
-        public bool Rotate(CubieView[] cubies, Operations oper)
+        public bool Rotate(Transform[] cubies, Operations oper)
         {
             // 回転中には次の回転は行わない.
             if (IsRotating) return false;
 
             // 新たに行う回転用に回転対象のTransformを格納するリストを初期化.
             rotateCubies = new List<Transform>();
-            foreach (CubieView cubie in cubies)
+            foreach (Transform cubie in cubies)
             {
-                rotateCubies.Add(cubie.gameObject.transform);
+                rotateCubies.Add(cubie);
             }
             CurrentOperation = oper;   // これから行う回転操作を記録.
             IsRotating = true;         // 回転中のステータスに変更.

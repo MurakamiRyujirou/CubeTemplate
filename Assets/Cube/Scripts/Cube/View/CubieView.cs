@@ -6,26 +6,13 @@ namespace MurakamiRyujirou.Cube
 {
     public class CubieView : MonoBehaviour
     {
-        [SerializeField]
-        private Material panelMaterialNone;
-
-        [SerializeField]
-        private Material panelMaterialRed;
-
-        [SerializeField]
-        private Material panelMaterialOrange;
-
-        [SerializeField]
-        private Material panelMaterialWhite;
-
-        [SerializeField]
-        private Material panelMaterialYellow;
-
-        [SerializeField]
-        private Material panelMaterialBlue;
-
-        [SerializeField]
-        private Material panelMaterialGreen;
+        [SerializeField] private Material panelMaterialNone;
+        [SerializeField] private Material panelMaterialRed;
+        [SerializeField] private Material panelMaterialOrange;
+        [SerializeField] private Material panelMaterialWhite;
+        [SerializeField] private Material panelMaterialYellow;
+        [SerializeField] private Material panelMaterialBlue;
+        [SerializeField] private Material panelMaterialGreen;
 
         private Dictionary<Faces, GameObject> panels;
 
@@ -38,28 +25,30 @@ namespace MurakamiRyujirou.Cube
         }
 
         /// 指定の配色情報に併せて六面全てのパネルの色をセットする.
-        public void SetColors(ColorScheme colorSchemes)
+        public void SetPanels(PanelTable panelTable)
         {
             for (int index = 0; index < 6; index++)
             {
                 Faces face = (Faces)Enum.ToObject(typeof(Faces), index);
-                SetColor(face, colorSchemes.Colors[(int)face]);
+                IPanel panel = panelTable.Get(face);
+                SetPanel(face, panel);
             }
         }
 
         /// 指定の面のパネルを指定の色に設定する.
-        public void SetColor(Faces face, PanelColors color)
+        public void SetPanel(Faces face, IPanel p)
         {
             GameObject panel = panels[face];
-            panel.GetComponent<MeshRenderer>().material = GetMaterial(color);
-            panel.SetActive(color != PanelColors.NONE);
+            panel.GetComponent<MeshRenderer>().material = GetMaterial(p);
+            panel.SetActive(((ColorPanel)p).Color != PanelColors.NONE);
         }
 
         /// パネルの色からマテリアルを返す.
         /// <param name="color">パネルの色.</param>
         /// <returns>マテリアル.</returns>
-        private Material GetMaterial(PanelColors color)
+        private Material GetMaterial(IPanel p)
         {
+            PanelColors color = ((ColorPanel)p).Color;
             return color switch
             {
                 PanelColors.NONE   => panelMaterialNone,

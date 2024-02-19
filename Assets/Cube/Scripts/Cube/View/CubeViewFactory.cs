@@ -34,7 +34,7 @@ namespace MurakamiRyujirou.Cube
                         Vector3 position = new(x + d, y + d, z + d);
 
                         // モデルから配色を取得し、同じ配色のビューを生成する.
-                        ColorScheme colorScheme = cube.GetColorScheme(x, y, z);
+                        PanelTable colorScheme = cube.GetPanelTable(new Position(x, y, z));
 
                         CubieView cv = cubieFactory.CreateView(cubeViewObject.transform, colorScheme, position, Quaternion.identity, x, y, z);
 

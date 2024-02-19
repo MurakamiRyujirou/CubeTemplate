@@ -34,19 +34,19 @@ namespace MurakamiRyujirou.Solver
             int[] ep = new int[12];
             int[] eo = new int[12];
 
-            uColor = cube.GetCubie(1, 2, 1).GetColor(Faces.UP);
-            fColor = cube.GetCubie(1, 1, 0).GetColor(Faces.FRONT);
-            rColor = cube.GetCubie(2, 1, 1).GetColor(Faces.RIGHT);
-            bColor = cube.GetCubie(1, 1, 2).GetColor(Faces.BACK);
-            lColor = cube.GetCubie(0, 1, 1).GetColor(Faces.LEFT);
-            dColor = cube.GetCubie(1, 0, 1).GetColor(Faces.DOWN);
+            uColor = cube.GetColor(new Position(1, 2, 1), Faces.UP);
+            fColor = cube.GetColor(new Position(1, 1, 0), Faces.FRONT);
+            rColor = cube.GetColor(new Position(2, 1, 1), Faces.RIGHT);
+            bColor = cube.GetColor(new Position(1, 1, 2), Faces.BACK);
+            lColor = cube.GetColor(new Position(0, 1, 1), Faces.LEFT);
+            dColor = cube.GetColor(new Position(1, 0, 1), Faces.DOWN);
 
             for (int i = 0; i < ci.GetLength(0); i++)
             {
                 int x = ci[i, 0];
                 int y = ci[i, 1];
                 int z = ci[i, 2];
-                Cubie cubie = cube.GetCubie(x, y, z);
+                Cubie cubie = cube.GetCubie(new Position(x, y, z));
                 cp[i] = GetCpAt(cubie, i);
                 co[i] = GetCoAt(cubie, i);
             }
@@ -55,7 +55,7 @@ namespace MurakamiRyujirou.Solver
                 int x = ei[i, 0];
                 int y = ei[i, 1];
                 int z = ei[i, 2];
-                Cubie cubie = cube.GetCubie(x, y, z);
+                Cubie cubie = cube.GetCubie(new Position(x, y, z));
                 ep[i] = GetEpAt(cubie, i);
                 eo[i] = GetEoAt(cubie, i, ep[i]);
             }

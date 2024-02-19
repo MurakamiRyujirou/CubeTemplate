@@ -56,7 +56,8 @@ namespace MurakamiRyujirou.Cube
             if (CubeView.IsRotating) return false;
 
             // 回転すべきキュービーの、キューブビュー上の配列の添え字(座標)を取得する.
-            Vector3Int[] posList = Cube.GetRotateIndexes(oper);
+            //Vector3Int[] posList = Cube.GetRotateIndexes(oper);
+            Position[] posList = Cube.GetRotateInitialPositions(oper);
 
             // 座標に応じたビューを取得.
             CubieView[] rotateCubieViews = CubeView.GetCubieViews(posList);

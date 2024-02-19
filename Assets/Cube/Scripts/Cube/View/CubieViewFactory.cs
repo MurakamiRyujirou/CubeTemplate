@@ -26,7 +26,7 @@ namespace MurakamiRyujirou.Cube
         private GameObject centerPanelPrefab;
 
         /// キュービービューを生成する.
-        public CubieView CreateView(Transform parent, ColorScheme color, Vector3 position, Quaternion rotation, int x, int y, int z)
+        public CubieView CreateView(Transform parent, PanelTable color, Vector3 position, Quaternion rotation, int x, int y, int z)
         {
             PanelType type = GetPanelType(x, y, z);
             GameObject panelPrefab = GetPanelPrefab(type);
@@ -38,7 +38,7 @@ namespace MurakamiRyujirou.Cube
                 Faces face = (Faces)Enum.ToObject(typeof(Faces), i);
                 Vector3 pos = positions[i] + position;
                 Quaternion rot = rotations[i] * GetPanelRotate(x, y, z, i);
-                PanelColors c = color.Colors[i];
+                IPanel p = color.Get(face);
 
                 // キュービーの位置によって作るパネルを切り替える.
                 GameObject panel = Instantiate(panelPrefab, pos, rot, cubieViewObject.transform);
@@ -47,7 +47,7 @@ namespace MurakamiRyujirou.Cube
                 cubieView.AddPanel(face, panel);
 
                 // パネルに色をセットする.
-                cubieView.SetColor(face, c);
+                cubieView.SetPanel(face, p);
             }
             return cubieView;
         }
