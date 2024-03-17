@@ -48,7 +48,7 @@ namespace MurakamiRyujirou.Cube
         {
             if (obj == null) return false;
             if (obj == this) return true;
-            if (obj.GetType() != this.GetType()) return false;
+            if (!(obj is PanelTable)) return false;
             PanelTable target = (PanelTable)obj;
             for (int i = 0; i < NUMBER_OF_FACES; i++)
             {

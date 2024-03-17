@@ -82,6 +82,11 @@ namespace MurakamiRyujirou.Cube
                 cubies[p[1].x, p[1].y, p[1].z] = cubies[p[0].x, p[0].y, p[0].z];
                 cubies[p[0].x, p[0].y, p[0].z] = temp;
             }
+            // 冗長ではあるが現在の座標を更新する.
+            foreach (Vector3Int v in p)
+            {
+                cubies[v.x, v.y, v.z].CurrentPosition = new Position(v.x, v.y, v.z);
+            }
         }
 
         /// 指定した座標に存在するキュービーを回転させる.

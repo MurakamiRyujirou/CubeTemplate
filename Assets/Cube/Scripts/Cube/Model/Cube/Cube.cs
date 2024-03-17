@@ -81,7 +81,7 @@ namespace MurakamiRyujirou.Cube
         {
             if (obj == null) return false;
             if (obj == this) return true;
-            if (obj.GetType() != this.GetType()) return false;
+            if (!(obj is Cube)) return false;
             Cube target = (Cube)obj;
             if (target.cubies.GetLength(0) != cubies.GetLength(0) ||
                 target.cubies.GetLength(1) != cubies.GetLength(1) ||

@@ -63,7 +63,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 2e09029a242ed7c46a63c46f35635d88, type: 2}
+  - {fileID: 2100000, guid: f349ee1159889f34b84d30ede4f9b030, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -115,13 +115,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 8217891540640073649}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0ee1745ecb0203b4884d8bd3bd50dfda, type: 3}
+  m_Script: {fileID: 11500000, guid: 6e11df5443002d3478df57b83e64bfe6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  panelMaterialNone: {fileID: 2100000, guid: c62980e5df6e8ee4a8dad1e0acb65aac, type: 2}
-  panelMaterialRed: {fileID: 2100000, guid: b0938aa007b3c11429e79729fbb97c17, type: 2}
-  panelMaterialOrange: {fileID: 2100000, guid: 53af8327da906044baadbf235e9ff73b, type: 2}
-  panelMaterialWhite: {fileID: 2100000, guid: 13bf2533e4fabf54aa3141fbb44116b5, type: 2}
-  panelMaterialYellow: {fileID: 2100000, guid: bc4b4a82cc8fce24488b4fbd39887160, type: 2}
-  panelMaterialBlue: {fileID: 2100000, guid: 6732f4aa6ce55be4ab6b63aea61c143b, type: 2}
-  panelMaterialGreen: {fileID: 2100000, guid: a6e1b2bcade9e134c8f0f1c7211ebb6a, type: 2}
+  panelMaterialNone: {fileID: 2100000, guid: 5ba4626a202337c4a9c32c710bc399c3, type: 2}
+  panelMaterialRed: {fileID: 2100000, guid: 62abc25397c3ddf45b5f5a5827e14354, type: 2}
+  panelMaterialOrange: {fileID: 2100000, guid: b1e881d3244bdf249848d3239f6f120f, type: 2}
+  panelMaterialWhite: {fileID: 2100000, guid: b818c6b9b2998df47a5583325d639e2b, type: 2}
+  panelMaterialYellow: {fileID: 2100000, guid: ee894f8548831f847a4f121d5af992c7, type: 2}
+  panelMaterialBlue: {fileID: 2100000, guid: 0bfc5da5322fc2940a632690d627af5c, type: 2}
+  panelMaterialGreen: {fileID: 2100000, guid: 858cee8b365e18b479c6289bd57cced9, type: 2}

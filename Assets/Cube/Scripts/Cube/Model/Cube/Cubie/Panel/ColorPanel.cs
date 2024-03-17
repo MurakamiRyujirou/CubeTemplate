@@ -33,7 +33,7 @@ namespace MurakamiRyujirou.Cube
         {
             if (obj == null) return false;
             if (obj == this) return true;
-            if (obj.GetType() != this.GetType()) return false;
+            if (!(obj is ColorPanel)) return false;
             ColorPanel target = (ColorPanel)obj;
             return Color == target.Color;
         }

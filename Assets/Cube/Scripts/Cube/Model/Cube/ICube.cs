@@ -29,5 +29,10 @@ namespace MurakamiRyujirou.Cube
         /// 指定の座標に現在位置するキュービーの、指定面のパネル情報を取得する.
         IPanel GetPanel(Position pos, Faces face);
 
+        /// 指定の座標に初期状態で存在したキュービーを取得する.
+        ICubie GetInitialCubie(Position pos);
+
+        /// 指定の座標に初期状態で存在したキュービーの、指定面のパネル情報を取得する.
+        IPanel GetInitialPanel(Position pos, Faces face);
     }
 }

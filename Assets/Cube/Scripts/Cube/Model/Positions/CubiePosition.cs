@@ -131,7 +131,7 @@ namespace MurakamiRyujirou.Cube
         {
             if (obj == null) return false;
             if (obj == this) return true;
-            if (obj.GetType() != this.GetType()) return false;
+            if (!(obj is CubiePosition)) return false;
             CubiePosition target = (CubiePosition)obj;
             return X == target.X && Y == target.Y && Z == target.Z;
         }

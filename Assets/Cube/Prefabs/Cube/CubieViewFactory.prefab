@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3318228959445799189}
-  - component: {fileID: 8735271811912617997}
+  - component: {fileID: 8853530401608308328}
   m_Layer: 0
   m_Name: CubieViewFactory
   m_TagString: Untagged
@@ -32,7 +32,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8735271811912617997
+--- !u!114 &8853530401608308328
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -41,16 +41,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 1481915916059140557}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6d24e0b900a3db249bc0b5af45f1da98, type: 3}
+  m_Script: {fileID: 11500000, guid: edee5bac5ebe8004b917b910d7e5fa71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cubiePrefab: {fileID: 8217891540640073649, guid: c1986bcb5536c034d83217dc85b88522,
+  cubiePrefab: {fileID: 8217891540640073649, guid: df1488a0d4dad3e4aaedc2d6c0bade5c,
     type: 3}
-  cubiePanelPrefab: {fileID: 169275703041786231, guid: c5b6b99d19a7bb147aadc5c812df0ec7,
+  cubiePanelPrefab: {fileID: 169275703041786231, guid: 4a8d365ea3f6707449b7943271bbae3f,
     type: 3}
-  cornerPanelPrefab: {fileID: 169275703041786231, guid: 8c08f58e925e3814ca9d42c02020ffdd,
+  cornerPanelPrefab: {fileID: 169275703041786231, guid: d1fb36817c21ff244b53f1a2662a7b6e,
     type: 3}
-  edgePanelPrefab: {fileID: 169275703041786231, guid: b7d3ed7cba7a934499788c91b1f23096,
+  edgePanelPrefab: {fileID: 169275703041786231, guid: db433a4e692a023419c2678d0de474a1,
     type: 3}
-  centerPanelPrefab: {fileID: 169275703041786231, guid: a8f20b316592afd48ac7fa557b6fadf1,
+  centerPanelPrefab: {fileID: 169275703041786231, guid: 70c973d36bcdf044e800a9b6b0db9e98,
     type: 3}

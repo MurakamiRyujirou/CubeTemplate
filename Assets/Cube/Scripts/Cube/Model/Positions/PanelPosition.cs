@@ -143,7 +143,7 @@ namespace MurakamiRyujirou.Cube
         {
             if (obj == null) return false;
             if (obj == this) return true;
-            if (obj.GetType() != this.GetType()) return false;
+            if (!(obj is PanelPosition)) return false;
             PanelPosition target = (PanelPosition)obj;
             return Position.Equals(target.Position) && Face.Equals(target.Face);
         }

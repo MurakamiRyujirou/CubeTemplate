@@ -109,9 +109,6 @@ namespace MurakamiRyujirou.Cube
             {
                 // モデルを回転させる.
                 Cube.Rotate(oper);
-
-                // モデルとビューが一致することを確認する.
-                // CubeView.Adjust(Cube);
             }
         }
     }

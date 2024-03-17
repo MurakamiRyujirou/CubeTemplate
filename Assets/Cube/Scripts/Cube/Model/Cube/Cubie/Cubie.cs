@@ -6,6 +6,9 @@ namespace MurakamiRyujirou.Cube
     [Serializable]
     public class Cubie : RotateObject, ICubie
     {
+        // キュービーの面の数.Facesで定義されてはいるが、マジックナンバーの6を使わないように定義.
+        // public const int NUMBER_OF_FACES = 6;
+
         public Position InitialPosition { get; }
         public Position CurrentPosition { get; set; }
 
@@ -39,7 +42,7 @@ namespace MurakamiRyujirou.Cube
         {
             if (obj == null) return false;
             if (obj == this) return true;
-            if (obj.GetType() != this.GetType()) return false;
+            if (!(obj is Cubie)) return false;
             Cubie target = (Cubie)obj;
             return InitialPosition.Equals(target.InitialPosition) &&
                    InitialPanels.Equals(target.InitialPanels) &&

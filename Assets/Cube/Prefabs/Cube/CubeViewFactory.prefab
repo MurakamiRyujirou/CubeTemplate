@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 629728228449168610}
-  - component: {fileID: 1806108708837432051}
+  - component: {fileID: 6117917488846230632}
   m_Layer: 0
   m_Name: CubeViewFactory
   m_TagString: Untagged
@@ -32,7 +32,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1806108708837432051
+--- !u!114 &6117917488846230632
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -41,10 +41,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1268112721340174155}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 684021fd3a88a144dab9423a7f51b359, type: 3}
+  m_Script: {fileID: 11500000, guid: 57ce72bedc50be241b680ab64507aede, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cubieFactory: {fileID: 8735271811912617997, guid: 362b822bee2386f43ba77ebea3ec6128,
+  cubieFactory: {fileID: 8853530401608308328, guid: 01fbd46571821aa4f8b28e7f1e06f86b,
     type: 3}
-  cubeViewPrefab: {fileID: 4676660045942708623, guid: 74ef5ebfa7dfa774fae008643b3291b4,
+  cubeViewPrefab: {fileID: 4676660045942708623, guid: abbb5798a2ee70b40b85a5a873f5aac6,
     type: 3}

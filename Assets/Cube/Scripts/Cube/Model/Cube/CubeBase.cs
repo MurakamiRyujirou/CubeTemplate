@@ -81,5 +81,28 @@ namespace MurakamiRyujirou.Cube
         {
             return GetCubie(pos).CurrentPanels.Get(face);
         }
+
+        /// 指定の座標に初期状態で存在したキュービーを取得する.
+        public ICubie GetInitialCubie(Position pos)
+        {
+            for (int x = 0; x < Size; x++)
+            {
+                for (int y = 0; y < Size; y++)
+                {
+                    for (int z = 0; z < Size; z++)
+                    {
+                        if (cubies[x, y, z].InitialPosition.Equals(pos))
+                            return cubies[x, y, z];
+                    }
+                }
+            }
+            return null;
+        }
+
+        /// 指定の座標に初期状態で存在したキュービーの、指定面のパネル情報を取得する.
+        public IPanel GetInitialPanel(Position pos, Faces face)
+        {
+            return GetInitialCubie(pos).InitialPanels.Get(face);
+        }
     }
 }

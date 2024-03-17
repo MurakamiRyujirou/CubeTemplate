@@ -150,5 +150,93 @@ namespace MurakamiRyujirou.Cube
                 PureOperations.F => Operations.F,
             };
         }
+
+        public static Operations GetReverse(Operations oper)
+        {
+            return oper switch
+            {
+                Operations.R => Operations.R_,
+                Operations.L => Operations.L_,
+                Operations.U => Operations.U_,
+                Operations.D => Operations.D_,
+                Operations.B => Operations.B_,
+                Operations.F => Operations.F_,
+                Operations.R_ => Operations.R,
+                Operations.L_ => Operations.L,
+                Operations.U_ => Operations.U,
+                Operations.D_ => Operations.D,
+                Operations.B_ => Operations.B,
+                Operations.F_ => Operations.F,
+                Operations.M => Operations.M_,
+                Operations.E => Operations.E_,
+                Operations.S => Operations.S_,
+                Operations.M_ => Operations.M,
+                Operations.E_ => Operations.E,
+                Operations.S_ => Operations.S,
+                Operations.x => Operations.x_,
+                Operations.y => Operations.y_,
+                Operations.z => Operations.z_,
+                Operations.x_ => Operations.x,
+                Operations.y_ => Operations.y,
+                Operations.z_ => Operations.z,
+                Operations.Rw => Operations.Rw_,
+                Operations.Lw => Operations.Lw_,
+                Operations.Uw => Operations.Uw_,
+                Operations.Dw => Operations.Dw_,
+                Operations.Bw => Operations.Bw_,
+                Operations.Fw => Operations.Fw_,
+                Operations.Rw_ => Operations.Rw,
+                Operations.Lw_ => Operations.Lw,
+                Operations.Uw_ => Operations.Uw,
+                Operations.Dw_ => Operations.Dw,
+                Operations.Bw_ => Operations.Bw,
+                Operations.Fw_ => Operations.Fw,
+                _ => oper
+            };
+        }
+
+        public static Operations GetDouble(Operations oper)
+        {
+            return oper switch
+            {
+                Operations.R => Operations.R2,
+                Operations.L => Operations.L2,
+                Operations.U => Operations.U2,
+                Operations.D => Operations.D2,
+                Operations.B => Operations.B2,
+                Operations.F => Operations.F2,
+                Operations.R_ => Operations.R2,
+                Operations.L_ => Operations.L2,
+                Operations.U_ => Operations.U2,
+                Operations.D_ => Operations.D2,
+                Operations.B_ => Operations.B2,
+                Operations.F_ => Operations.F2,
+                Operations.M => Operations.M2,
+                Operations.E => Operations.E2,
+                Operations.S => Operations.S2,
+                Operations.M_ => Operations.M2,
+                Operations.E_ => Operations.E2,
+                Operations.S_ => Operations.S2,
+                Operations.x => Operations.x2,
+                Operations.y => Operations.y2,
+                Operations.z => Operations.z2,
+                Operations.x_ => Operations.x2,
+                Operations.y_ => Operations.y2,
+                Operations.z_ => Operations.z2,
+                Operations.Rw => Operations.Rw2,
+                Operations.Lw => Operations.Lw2,
+                Operations.Uw => Operations.Uw2,
+                Operations.Dw => Operations.Dw2,
+                Operations.Bw => Operations.Bw2,
+                Operations.Fw => Operations.Fw2,
+                Operations.Rw_ => Operations.Rw2,
+                Operations.Lw_ => Operations.Lw2,
+                Operations.Uw_ => Operations.Uw2,
+                Operations.Dw_ => Operations.Dw2,
+                Operations.Bw_ => Operations.Bw2,
+                Operations.Fw_ => Operations.Fw2,
+                _ => oper
+            };
+        }
     }
 }
